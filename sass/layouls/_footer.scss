@@ -1,0 +1,210 @@
+.footer {
+    background-color: var(--background-color);
+    padding: 60px 0px;
+    max-width: 100%;
+    margin: auto;
+}
+
+.footer-wrap {
+    text-align: center;
+
+    @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: baseline;
+    }
+
+    @include desktop {
+        display: flex;
+        align-items: baseline;
+        justify-content: flex-start;
+        text-align: inherit;
+    }
+}
+
+.footer-logo-wrapper {
+    @include desktop {
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+
+.footer__studio {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    color: var(--secondayr-text-color);
+}
+
+.footer-address {
+    font-style: normal;
+}
+
+.footer-map {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    color: var(--secondayr-text-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-mailto,
+.footer-contact {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social {
+    @include tablet {
+        margin-left: 165px;
+    }
+
+    @include desktop  {
+        margin-left: 70px;
+    }
+}
+
+.footer-social-title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.1;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--secondayr-text-color);
+}
+
+.footer-social-list {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-social-link {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+    background: var(--accent-colo);
+}
+
+.footer-social-link svg {
+    fill: var(--secondayr-text-color);
+}
+
+.footer-social-item:not(:first-child) {
+    margin-left: 10px;
+}
+
+.footer-list,
+.footer-social-list {
+    padding: 20px 0px 60px 0px;
+}
+
+.footer-item:not(:first-child) {
+    margin-top: 9px;
+}
+
+.footer-subscription {
+    @include desktop {
+        margin-left: 93px;
+    }
+}
+
+.footer-subscription label {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.1;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.subscription-wrap {
+    
+    padding-top: 20px;
+
+    @include desktop {
+        display: flex;
+    }
+    
+}
+
+.subscription-wrap input {
+    width: 358px;
+    height: 50px;
+    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.6);
+    background-color: #2f303a;
+    padding: 0 0 0 15px;
+    outline: none;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.subscription-wrap input::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.3;
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.subscription-wrap input:focus {
+    border: 1px solid var(--accent-colo);
+}
+
+.subscribe-input {
+    margin-bottom: 20px;
+}
+
+.btn-footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 200px;
+    margin: auto;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.06em;
+    color: #ffffff;
+    background: #2196f3;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    height: 50px;
+    padding: 0 28px;
+    cursor: pointer;
+
+    @include desktop {
+        margin: 0px 0px 0px 12px;
+    }
+}
+
+.btn-footer svg {
+    position: absolute;
+    top: 50%;
+    left: 83.31%;
+    transform: translate(-50%, -50%);
+}

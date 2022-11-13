@@ -1,0 +1,112 @@
+.team {
+    background-color: var(--tetriary-text-color);
+
+    &__title {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 1.2;
+        letter-spacing: 0.03em;
+        margin-bottom: 30px;
+        text-align: center;
+
+        @media screen and (min-width: 1200px) {
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 1.2;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+    }
+
+    &__section {
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    &__list {
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 0px 0px 4px 4px;
+        background-color: rgba(255, 255, 255, 1);
+    }
+
+    &__list {
+        @media screen and (min-width: 768px) {
+            width: calc((100% - 30px) / 2);
+        }
+
+        @media screen and (min-width: 1200px) {
+            width: calc((100% - 90px) / 4);
+        }
+    }
+
+    &__aside {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        text-align: center;
+    }
+
+    &__employee {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.2;
+        letter-spacing: 0.03em;
+        text-decoration: none;
+        text-transform: capitalize;
+        padding-bottom: 10px;
+    }
+
+    &__employee--item {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.2;
+        letter-spacing: 0.03em;
+        text-decoration: none;
+        color: var(--description-text);
+        padding-bottom: 16px;
+    }
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+
+    &__item {
+        &:not(:first-child) {
+            margin-left: 10px;
+        }
+    }
+
+    &__link {
+        width: 44px;
+        height: 44px;
+        background: #ffffff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &__link {
+        &:hover, 
+        &:focus {
+            background-color: var(--accent-colo);
+        }
+
+        & svg {
+             fill: var(--sprite-color);
+         }
+
+        &:hover svg, 
+        &:focus svg, 
+        &:active svg {
+            fill: var(--secondayr-text-color);
+            transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    }
+}

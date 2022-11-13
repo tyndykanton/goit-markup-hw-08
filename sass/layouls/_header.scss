@@ -1,0 +1,104 @@
+.header {
+    border-bottom: 1px solid #ececec;
+
+    &-container {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.header__logo {
+    padding: 16px 0px;
+    
+    @include tablet {
+        margin-right: 88px;
+        padding: 26px 0px;
+    }
+
+    @include desktop {
+        margin-right: 93px;
+        padding: 24px 0px 25px 0;
+    }
+}
+
+.contacts-container {
+    margin-left: auto;
+    display: none;
+
+    @include tablet {
+        display: block;
+    }
+}
+
+.contacts {
+    @include desktop {
+        display: flex;
+    }
+
+    &__item a {
+        display: flex;
+        align-items: center;
+    }
+
+    &__mailto {
+        font-size: 14px;
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+        text-decoration: none;
+        color: var(--description-text);
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        margin-bottom: 10px;
+    
+            &:hover svg,
+            &:focus svg,
+            &:active svg {
+                fill: var(--accent-colo);
+            }
+        
+            & svg {
+                fill: var(--description-text);
+                transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            & svg {
+                margin: 0px 8px 0px 1px;
+                width: 14px;
+
+                @include desktop {
+                    margin: 0px 10px 0px 2px;
+                    width: 16px;
+                }
+            }
+    }
+
+    &__phone {
+        // margin-left: 50px;
+        font-size: 14px;
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+        text-decoration: none;
+        color: var(--description-text);
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        
+            &:hover svg,
+            &:focus svg,
+            &:active svg {
+                    fill: var(--accent-colo);
+                }
+
+            & svg {
+            fill: var(--description-text);
+            transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            & svg {
+                margin-right: 8px;
+                width: 14px;
+
+                @include desktop {
+                    margin: 0px 10px 0px 30px;
+                    width: 16px;
+                }
+            }
+        }
+}

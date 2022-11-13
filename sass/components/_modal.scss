@@ -1,0 +1,221 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.modal {
+    position: absolute;
+    padding: 40px 40px 0px 40px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    animation-name: rotation;
+    animation-duration: 1000ms;
+}
+
+.modal-title {
+    width: 448px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+    color: #212121;
+}
+
+@keyframes rotation {
+    0% {
+        transform: translate(-50%, -50%) rotate(180deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.close-button {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.close-button svg {
+    fill: rgba(0, 0, 0, 1);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-button svg:hover {
+    fill: var(--accent-colo);
+}
+
+/* Form */
+.form-element {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-element label {
+    margin-bottom: 5px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    color: var(--description-text);
+}
+
+.form-element svg {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-wrap {
+    display: flex;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.form-element input {
+    height: 40px;
+    border: none;
+    width: 100%;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding-left: 42px;
+    cursor: pointer;
+    outline: none;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-wrap input:focus {
+    border: 1px solid var(--accent-colo);
+}
+
+.input-wrap input:focus+svg {
+    fill: var(--accent-colo);
+}
+
+.form-element textarea {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    resize: none;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding: 12px 16px;
+    cursor: pointer;
+    outline: none;
+    color: rgba(117, 117, 117, 0.5);
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-element textarea::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.form-element textarea:focus {
+    border: 1px solid var(--accent-colo);
+}
+
+.form-element-btn {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.btn-modal {
+    text-align: center;
+    padding: 10px 50px;
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.06em;
+    color: var(--secondayr-text-color);
+    background: #2196f3;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.checkbox {
+    position: relative;
+    border: 2px solid #212121;
+    width: 16px;
+    height: 15px;
+    border-radius: 3px;
+    margin-right: 7px;
+}
+
+.checkbox svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.checkbox svg {
+    display: none;
+}
+
+.accept {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.accept label {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.7px;
+    letter-spacing: 0.03em;
+    color: var(--description-text);
+}
+
+.accept input+label .checkbox {
+    transition-property: background-color, border;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accept input:checked+label .checkbox {
+    background-color: var(--accent-colo);
+    border: 2px solid var(--accent-colo);
+}
+
+.accept input:checked+label .checkbox svg {
+    display: block;
+}
+
+.checkbox-link {
+    color: var(--accent-colo);
+    padding-left: 5px;
+}
