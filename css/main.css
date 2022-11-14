@@ -44,7 +44,7 @@ button {
 }
 
 .container {
-  max-width: 480px;
+  max-width: 450px;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
@@ -712,38 +712,58 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 30px;
 }
 
-.clients-link svg {
-  fill: currentColor;
-  color: var(--sprite-color);
-  padding: 0px 50px;
-  border: 1px solid var(--sprite-color);
-  border-radius: 4px;
-  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.clients-item {
+  -ms-flex-preferred-size: calc((100% - 30px) / 2);
+      flex-basis: calc((100% - 30px) / 2);
+  height: 92px;
 }
 @media screen and (min-width: 768px) {
-  .clients-link svg {
-    padding: 0px 58px;
+  .clients-item {
+    -ms-flex-preferred-size: calc((100% - 60px) / 3);
+        flex-basis: calc((100% - 60px) / 3);
   }
 }
 @media screen and (min-width: 1200px) {
-  .clients-link svg {
-    padding: 0px 30px;
+  .clients-item {
+    -ms-flex-preferred-size: calc((100% - 150px) / 6);
+        flex-basis: calc((100% - 150px) / 6);
   }
+}
+
+.clients-link svg {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--sprite-color);
+  border-radius: 4px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #afb1b8;
+  -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.clients-link svg {
+  fill: currentColor;
+  color: var(--sprite-color);
 }
 
 .clients-link svg:hover,
 .clients-link svg:focus,
 .clients-link svg:active {
-  color: var(--accent-colo);
+  fill: var(--accent-colo);
   border-color: var(--accent-colo);
 }
 
@@ -897,7 +917,7 @@ button {
 
 .footer-list,
 .footer-social-list {
-  padding: 20px 0px 60px 0px;
+  margin: 20px 0px 60px 0px;
 }
 
 .footer-item:not(:first-child) {
@@ -906,7 +926,7 @@ button {
 
 @media screen and (min-width: 1200px) {
   .footer-subscription {
-    margin-left: 93px;
+    margin-left: auto;
   }
 }
 
@@ -920,7 +940,7 @@ button {
 }
 
 .subscription-wrap {
-  padding-top: 20px;
+  margin-top: 20px;
 }
 @media screen and (min-width: 1200px) {
   .subscription-wrap {
@@ -931,16 +951,12 @@ button {
 }
 
 .subscription-wrap input {
-  width: 358px;
-  height: 50px;
   border: none;
   border: 1px solid rgba(255, 255, 255, 0.3);
   -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
           filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
-  color: rgba(255, 255, 255, 0.6);
   background-color: #2f303a;
-  padding: 0 0 0 15px;
   outline: none;
   -webkit-transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -953,6 +969,7 @@ button {
   line-height: 1.3;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+  padding-left: 16px;
 }
 
 .subscription-wrap input::-moz-placeholder {
@@ -961,6 +978,7 @@ button {
   line-height: 1.3;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+  padding-left: 16px;
 }
 
 .subscription-wrap input:-ms-input-placeholder {
@@ -969,6 +987,7 @@ button {
   line-height: 1.3;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+  padding-left: 16px;
 }
 
 .subscription-wrap input::-ms-input-placeholder {
@@ -977,6 +996,7 @@ button {
   line-height: 1.3;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+  padding-left: 16px;
 }
 
 .subscription-wrap input::placeholder {
@@ -985,6 +1005,7 @@ button {
   line-height: 1.3;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+  padding-left: 16px;
 }
 
 .subscription-wrap input:focus {
@@ -993,6 +1014,23 @@ button {
 
 .subscribe-input {
   margin-bottom: 20px;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--primary-white-color);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+@media screen and (min-width: 768px) {
+  .subscribe-input {
+    width: 450px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .subscribe-input {
+    width: 358px;
+  }
 }
 
 .btn-footer {
@@ -1038,13 +1076,15 @@ button {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: rgba(0, 0, 0, 0.1);
 }
 
 .modal {
+  max-width: 450px;
+  height: 609px;
   position: absolute;
-  padding: 40px 40px 0px 40px;
+  padding: 40px;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -1058,9 +1098,16 @@ button {
   -webkit-animation-duration: 1000ms;
           animation-duration: 1000ms;
 }
+@media screen and (min-width: 1200px) {
+  .modal {
+    max-width: 528px;
+    min-height: 581px;
+  }
+}
 
 .modal-title {
-  width: 448px;
+  width: 370px;
+  height: 60px;
   text-align: center;
   margin-bottom: 10px;
   font-weight: 700;
@@ -1068,6 +1115,11 @@ button {
   line-height: 1.6;
   letter-spacing: 0.03em;
   color: #212121;
+}
+@media screen and (min-width: 1200px) {
+  .modal-title {
+    width: 448px;
+  }
 }
 
 @-webkit-keyframes rotation {
@@ -1233,7 +1285,6 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-bottom: 40px;
 }
 
 .btn-modal {
@@ -1290,10 +1341,16 @@ button {
       -ms-flex-align: center;
           align-items: center;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.7px;
+  font-size: 12px;
+  line-height: 1.2px;
   letter-spacing: 0.03em;
   color: var(--description-text);
+}
+@media screen and (min-width: 1200px) {
+  .accept label {
+    font-size: 14px;
+    line-height: 1.7px;
+  }
 }
 
 .accept input + label .checkbox {
@@ -1336,9 +1393,9 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  width: 90vw;
-  padding: 38px 40px;
-  background-color: #FFFFFF;
+  background-color: var(--secondayr-text-color);
+  width: 100%;
+  z-index: 1;
   -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
   -webkit-transform: translateX(100%);
@@ -1359,18 +1416,32 @@ button {
           transform: translateX(0);
 }
 
+.mobile-menu-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+  padding: 48px 40px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
 .menu-close {
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: absolute;
   padding: 0;
   top: 10px;
   right: 15px;
-  background: #ffffff;
+  background-color: var(--secondayr-text-color);
   width: 40px;
   height: 40px;
   cursor: pointer;
@@ -1386,10 +1457,6 @@ button {
   fill: var(--accent-colo);
 }
 
-.mobile-menu-nav {
-  padding-bottom: 302px;
-}
-
 .mobile-menu-link {
   font-weight: 500;
   font-size: 40px;
@@ -1400,6 +1467,10 @@ button {
 
 .mobile-menu-item:not(:first-child) {
   margin-top: 35px;
+}
+
+.mobile-menu-list {
+  margin-bottom: 302px;
 }
 
 .contacts-menu {
@@ -1423,7 +1494,7 @@ button {
 }
 
 .contacts-menu-item:not(:first-child) {
-  margin-top: 35px;
+  margin-top: 32px;
 }
 
 .mobile-social {
